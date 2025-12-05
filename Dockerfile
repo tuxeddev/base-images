@@ -1,8 +1,8 @@
 # hadolint ignore=DL3007
-FROM registry.access.redhat.com/ubi9/nodejs-20:latest
+FROM registry.access.redhat.com/ubi9/nodejs-22-minimal:latest
 
 LABEL maintainer="base-images"
-LABEL description="Bun runtime based on Red Hat UBI9"
+LABEL description="Bun runtime based on Red Hat UBI9 Minimal"
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
