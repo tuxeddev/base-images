@@ -17,7 +17,7 @@ RUN dnf install -y \
 # Install Bun (using specific version for reproducible builds)
 ENV BUN_INSTALL=/usr/local
 ARG BUN_VERSION=latest
-RUN curl -fsSL https://bun.sh/install | bash -s "bun-v${BUN_VERSION}"
+RUN curl -fsSL https://bun.sh/install | bash -s -- "bun-v${BUN_VERSION}"
 
 # Verify Bun installation
 RUN bun --version
