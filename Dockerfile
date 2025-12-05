@@ -10,7 +10,11 @@ USER 0
 # Install dependencies and Bun
 ENV BUN_INSTALL=/usr/local
 # hadolint ignore=DL3041
-RUN curl -fsSL https://bun.sh/install | bash \
+RUN microdnf install -y \
+    unzip \
+    && microdnf clean all \
+    && rm -rf /var/cache/yum \
+    && curl -fsSL https://bun.sh/install | bash \
     && bun --version
 
 USER 1001
