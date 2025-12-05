@@ -14,10 +14,9 @@ RUN microdnf install -y \
     && microdnf clean all \
     && rm -rf /var/cache/yum
 
-# Install Bun (using specific version for reproducible builds)
+# Install Bun
 ENV BUN_INSTALL=/usr/local
-ARG BUN_VERSION=latest
-RUN curl -fsSL https://bun.sh/install | bash -s -- "bun-v${BUN_VERSION}"
+RUN curl -fsSL https://bun.sh/install | bash
 
 # Verify Bun installation
 RUN bun --version
